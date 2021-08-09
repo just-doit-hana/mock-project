@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Feeback</title>
+    <link rel="stylesheet" href="../EleaningLayoutUser/css/quiz.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .header{
+            background: linear-gradient(#29303B,#29303B,#29303B);
+            min-height: 3.5em;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper-quiz">
+    <div class="grid">
+        <div class="row">
+            <div class="col l-12 header-quiz header">
+                <div class="quiz-title-header" >
+                    <div class="quiz-msg">
+                        <h1 style="color: white" >View Feed Back</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-12">
+                <input type="hidden" id="numberQuestion">
+                <div class="wrapper-quiz-do">
+                    <div class="wrapper-question" id="view-feedback">
+                        <div class="content">
+                            <h5 class="question-number">1.</h5>
+                            <p class="question-content" >
+                                Which of the following is essential concept related to Cloud
+                                ?
+                            </p>
+                        </div>
+                        <ul class="content-list" >
+                            <li class="content-item">
+                                <input type="radio" name="" />
+                                <span>A The use of the word "cloud" makes reference to the two essential concepts</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-start" style="float: right; margin-top: 23px;" href="javascript:void(0)" onclick="Cancel()">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="js/quiz/view-feedback.js"></script>
+<!--<script src="js/quiz/index.js"></script>-->
+<!--<script src="js/auth/login.js"></script>-->
+<script>
+    function Cancel(){
+        window.location.href= `http://localhost:63342/Mock_Project-master/MockProject/EleaningLayoutUser/index.html`;
+    }
+</script>
+</body>
+</html>

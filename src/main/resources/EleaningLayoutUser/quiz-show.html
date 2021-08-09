@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Question</title>
+    <link rel="stylesheet" href="../EleaningLayoutUser/css/quiz.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .header{
+            background: linear-gradient(#29303B,#29303B,#29303B);
+            min-height: 3.5em;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper-quiz">
+        <div class="grid">
+            <div class="row">
+                <div class="col l-12 header-quiz header">
+                    <div class="quiz-title-header" id="name-course">
+                        <div class="quiz-msg">
+                            <h1 style="color: white" >Lesson 1 Quiz</h1>
+                        </div>
+                        <h3 class="text-title" style="color: white">Quiz 30 min</h3>
+                    </div>
+                </div>
+                <div class="col l-12">
+                    <input type="hidden" id="numberQuestion">
+                    <div class="wrapper-quiz-do">
+                        <div class="wrapper-question" id="question-list">
+                            <div class="content">
+                                <h5 class="question-number">1.</h5>
+                                <p class="question-content" >
+                                    Which of the following is essential concept related to Cloud
+                                    ?
+                                </p>
+                                <h6 class="question-score">1 point</h6>
+                            </div>
+                            <ul class="content-list" >
+                                <li class="content-item">
+                                    <input type="radio" name="" />
+                                    <span>A The use of the word "cloud" makes reference to the two essential concepts
+                                    </span>
+                                </li>
+                                <li class="content-item">
+                                    <input type="radio" name=""  />
+                                    <span>B All of the mentioned</span>
+                                </li>
+                                <li class="content-item">
+                                    <input type="radio" name=""   />
+                                    <span>C Cloud computing abstracts systems by pooling and sharing resources</span>
+                                </li>
+                                <li class="content-item">
+                                    <input type="radio" name=""  />
+                                    <span>D cloud computing is nothing more than the Internet </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-start" style="float: right; margin-top: 23px;" onclick="submitQuestion()">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="./js/quiz/index.js"></script>
+<!--    <script src="js/auth/login.js"></script>-->
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let urlParam = new URLSearchParams(window.location.search);
+            let id = urlParam.get("id");
+            var fiveMinutes = 60 * 5,
+                display = document.querySelector('#time');
+            startTimer(id, display);
+        };
+    </script>
+</body>
+</html>
